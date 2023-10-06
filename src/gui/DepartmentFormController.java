@@ -63,7 +63,7 @@ public class DepartmentFormController implements Initializable {
 			throw new IllegalStateException("Service was null");
 		}
 		try {
-			entity = getForData();
+			entity = getFormData();
 			service.saveOrUpdate(entity);
 			notifyDataChangeListeners();
 			Utils.currentStage(event).close();
@@ -80,7 +80,7 @@ public class DepartmentFormController implements Initializable {
 		}
 	}
 
-	private Department getForData() {
+	private Department getFormData() {
 		Department obj = new Department();
 
 		ValidationException exception = new ValidationException("Validation error");
